@@ -5,13 +5,7 @@ import { AutoZoneContext } from "../providers/UserProvider";
 const NavBar = () => {
 
     const { user, logOut } = useContext(AutoZoneContext);
-    if (user !== null) {
-        // The user object has basic properties such as display name, email, etc.
-        const displayName = user.displayName;
-        const email = user.email;
-        const photoURL = user.photoURL;
-        
-      }
+
     const handleSignOut = () => {
         logOut()
             .then(() => {
@@ -40,7 +34,7 @@ const NavBar = () => {
 
     </>
     return (
-        <div className="navbar bg-base-200 rounded-md">
+        <div className="navbar bg-base-100 rounded-md">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -54,14 +48,15 @@ const NavBar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-1">
-                   {navLinks}
+                    {navLinks}
                 </ul>
             </div>
             <div className="navbar-end">
                 {
                     user ?
                         <>
-                            <h3 className="mr-5">{user.displayName}</h3>
+                            <h3 className="mr-5">{user.displayName
+                            }</h3>
                             <img className="w-10 h-10 rounded-full mr-2" src={user.photoURL} />
                             <button onClick={handleSignOut} className="btn btn-sm">Sign out</button>
 

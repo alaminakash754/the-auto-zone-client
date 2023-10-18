@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AutoZoneContext } from "../../providers/UserProvider";
 import { useContext, useState } from "react";
 import Swal from 'sweetalert2'
+import { updateProfile } from "firebase/auth";
 
 const Signup = () => {
     const [signUpError, setSignUpError] = useState('');
@@ -62,6 +63,16 @@ const Signup = () => {
                 showConfirmButton: false,
                 timer: 1500
               }))
+              updateProfile(result.user, {
+                displayName: name,
+                photoURL: photo
+              })
+              .then(() => {
+                console.log('Profile Updated')
+              })
+              .catch(error => {
+                console.error(error)
+              });
               navigate('/');
         })
         .catch(error => {
