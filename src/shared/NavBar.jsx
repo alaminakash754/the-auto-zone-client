@@ -5,7 +5,13 @@ import { AutoZoneContext } from "../providers/UserProvider";
 const NavBar = () => {
 
     const { user, logOut } = useContext(AutoZoneContext);
-
+    if (user !== null) {
+        // The user object has basic properties such as display name, email, etc.
+        const displayName = user.displayName;
+        const email = user.email;
+        const photoURL = user.photoURL;
+        
+      }
     const handleSignOut = () => {
         logOut()
             .then(() => {

@@ -6,9 +6,10 @@ export const AutoZoneContext = createContext(null);
 
 const googleProvider = new GoogleAuthProvider();
 
-const UserProvider = ({children}) => {
+const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -38,7 +39,7 @@ const UserProvider = ({children}) => {
         return () => {
             unSubscribe();
         }
-    },[])
+    }, [])
     const userInfo = {
         user,
         loading,
