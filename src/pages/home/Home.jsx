@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../../shared/Banner";
 import Brands from "./Brands";
 import Dealers from "./Dealers";
+import Footer from "./Footer";
 
 
 
@@ -9,9 +10,9 @@ const Home = () => {
     const brandItems = useLoaderData();
     console.log(brandItems); 
     return (
-        <div>
+        <div className="space-y-10">
             <Banner></Banner>
-            <div className="mb-10">
+            <div className="mb-14">
                 <div className="text-center items-center justify-center">
                     <h2 className="text-4xl mb-4 font-bold">Let's Check Latest <span className="text-red-500">Cars & Bikes</span></h2>
                     <progress className="progress w-56 text-red-500 bg-red-500"></progress>
@@ -23,6 +24,7 @@ const Home = () => {
                 </div>
             </div>
             <Dealers></Dealers>
+            <Footer></Footer>
         </div>
     );
 };
