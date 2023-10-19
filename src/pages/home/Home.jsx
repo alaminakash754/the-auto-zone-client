@@ -14,12 +14,12 @@ const Home = () => {
             <Banner></Banner>
             <div className="mb-14">
                 <div className="text-center items-center justify-center">
-                    <h2 className="text-4xl mb-4 font-bold">Let's Check Latest <span className="text-red-500">Cars & Bikes</span></h2>
+                    <h2 className="text-4xl mb-4 font-bold">Let's Check Latest  <br /> Branded <span className="text-red-500">Cars & Bikes</span></h2>
                     <progress className="progress w-56 text-red-500 bg-red-500"></progress>
                 </div>
                 <div className="grid lg:grid-cols-3 gap-5 md:grid-cols-2 sm:grid-cols-1 rounded-md mt-10">
                 {
-                    brandItems.map(items => <Brands key={items.id} items={items}></Brands>)
+                    brandItems.map(items => <Brands key={items._id} items={items}></Brands>)
                 }
                 </div>
             </div>

@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: () => fetch('/autozone.json')
+            loader: () => fetch('http://localhost:5000/motos')
         },
         {
           path:'/login',
