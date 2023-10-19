@@ -19,17 +19,17 @@ const NavBar = () => {
     const navLinks = <>
         <li><NavLink to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-[#252424] font-bold text-lg hover:bg-orange-400 underline" : ""
+                isPending ? "pending" : isActive ? "text-[#252424] font-bold text-lg hover:bg-red-500 underline" : ""
             }>Home</NavLink></li>
         <li><NavLink to="/addproduct"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-[#252424] font-bold  text-lg hover:bg-orange-400  underline" : ""
+                isPending ? "pending" : isActive ? "text-[#252424] font-bold  text-lg hover:bg-red-500  underline" : ""
             }>Add Product</NavLink></li>
 
 
         <li><NavLink to="/mycart"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-[#252424] text-lg hover:bg-orange-400 font-bold underline" : ""
+                isPending ? "pending" : isActive ? "text-[#252424] text-lg hover:bg-red-500 font-bold underline" : ""
             }>My Cart</NavLink></li>
 
     </>
@@ -62,7 +62,7 @@ const NavBar = () => {
 
                         </>
                         :
-                        <Link to='/login'><button className="btn bg-orange-400">Login</button></Link>
+                        <Link to='/login'><button className="btn bg-red-500">Login</button></Link>
                 }
 
 

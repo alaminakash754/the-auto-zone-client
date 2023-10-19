@@ -12,7 +12,7 @@ const Signup = () => {
     const { createUser } = useContext(AutoZoneContext);
 
     const handleSignUp = e => {
-       
+
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.photo.value;
@@ -22,63 +22,63 @@ const Signup = () => {
         setSignUpError('');
         setSuccessSignUp('');
 
-        if(password.length < 6) {
+        if (password.length < 6) {
             setSignUpError(Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'password must be more than six character',
-                
-              }));
-            
-              return;
+
+            }));
+
+            return;
         }
-        else if (!/[A-Z]/.test(password)){
+        else if (!/[A-Z]/.test(password)) {
             setSignUpError(Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'password must be one capital letter',
-                
-              }));
-            
-              return;
+
+            }));
+
+            return;
         }
-        else if (!/[!@#$%^&*(),.?":{}|<>\s]/.test(password)){
+        else if (!/[!@#$%^&*(),.?":{}|<>\s]/.test(password)) {
             setSignUpError(Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'password must be one capital letter',
-              }));
-           
-              return;
+            }));
+
+            return;
         }
 
         createUser(email, password)
-        .then(result => {
-            console.log(result.user);
-            e.target.reset();
-            setSuccessSignUp(Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'User created successfully',
-                showConfirmButton: false,
-                timer: 1500
-              }))
-              updateProfile(result.user, {
-                displayName: name,
-                photoURL: photo
-              })
-              .then(() => {
-                console.log('Profile Updated')
-              })
-              .catch(error => {
-                console.error(error)
-              });
-              navigate('/');
-        })
-        .catch(error => {
-            console.error(error);
-            setSignUpError(error.message)
-        })
+            .then(result => {
+                console.log(result.user);
+                e.target.reset();
+                setSuccessSignUp(Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'User created successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                }))
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photo
+                })
+                    .then(() => {
+                        console.log('Profile Updated')
+                    })
+                    .catch(error => {
+                        console.error(error)
+                    });
+                navigate('/');
+            })
+            .catch(error => {
+                console.error(error);
+                setSignUpError(error.message)
+            })
 
     }
 
