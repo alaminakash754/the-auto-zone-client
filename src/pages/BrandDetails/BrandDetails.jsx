@@ -49,7 +49,7 @@ const BrandDetails = () => {
                     <Link to={`/eachbrand/${_id}`}>
                         <button className="rounded-lg p-4 text-white hover:text-red-500 hover:bg-gray-400 bg-red-500 ">Details</button>
                     </Link>
-                    <Link>
+                    <Link to={`/updatebrand/${_id}`}>
                         <button className="rounded-lg p-4 hover:text-red-500 text-white hover:bg-gray-400 bg-red-500">Update</button>
                     </Link>
                 </div>
