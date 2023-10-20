@@ -10,7 +10,7 @@ const Dealers = () => {
             </div>
             <h1 className="text-4xl font-semibold text-center">Best Dealers In <span className="text-red-500 ">Your City</span></h1>
             <div className=' text-center'>
-                <progress className="progress w-56 text-red-500 bg-red-500 mt-8"></progress>
+                <progress className="progress w-56 text-red-500 bg-red-500 mt-8 mb-5"></progress>
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4'>
                 <div className='bg-base-200 rounded-lg'>
