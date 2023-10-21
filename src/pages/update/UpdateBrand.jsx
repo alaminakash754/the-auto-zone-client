@@ -1,10 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const UpdateBrand = () => {
 
     const updateBrand = useLoaderData();
+    const navigate = useNavigate();
 
     const { _id, select, brand, name, image, price,  rating } = updateBrand;
 
@@ -19,7 +20,7 @@ const UpdateBrand = () => {
         const updatedItem = {select,brand,name,image,price,rating};
         console.log(updatedItem);
 
-        fetch(`http://localhost:5000/motos/${_id}`, {
+        fetch(` https://the-auto-zone-server-kw0hgec75-alamin-akashs-projects.vercel.app/motos/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
@@ -38,6 +39,7 @@ const UpdateBrand = () => {
                     timer: 1500
                 })
             }
+            navigate('/');
         });
     }
 

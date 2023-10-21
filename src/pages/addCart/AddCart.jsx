@@ -1,4 +1,4 @@
-import { json } from "react-router-dom";
+
 import Swal from "sweetalert2";
 const AddCart = () => {
 
@@ -15,7 +15,7 @@ const AddCart = () => {
         const newItem = {select,brand,name,image,price,description,rating};
         console.log(newItem);
 
-        fetch('http://localhost:5000/motos', {
+        fetch(' https://the-auto-zone-server-kw0hgec75-alamin-akashs-projects.vercel.app/motos', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

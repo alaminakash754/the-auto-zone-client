@@ -55,6 +55,18 @@ const Signup = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                const user = {email};
+                fetch(' https://the-auto-zone-server-kw0hgec75-alamin-akashs-projects.vercel.app/motos',{
+                    method: 'POST',
+                    headers:{
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
                 e.target.reset();
                 setSuccessSignUp(Swal.fire({
                     position: 'top-end',
