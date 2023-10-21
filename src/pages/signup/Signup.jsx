@@ -56,7 +56,7 @@ const Signup = () => {
             .then(result => {
                 console.log(result.user);
                 const user = {email};
-                fetch(' https://the-auto-zone-server-kw0hgec75-alamin-akashs-projects.vercel.app/motos',{
+                fetch(' https://the-auto-zone-server-8yda40n8o-alamin-akashs-projects.vercel.app/user',{
                     method: 'POST',
                     headers:{
                         'content-type': 'application/json'
@@ -85,7 +85,7 @@ const Signup = () => {
                     .catch(error => {
                         console.error(error)
                     });
-                navigate('/');
+                navigate('/login');
             })
             .catch(error => {
                 console.error(error);

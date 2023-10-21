@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const BrandDetails = () => {
     const detailsBrand = useLoaderData();
-    const { _id, select, brand, sub_model1, sub_model2, sub_model3, sub_model4, model1_img, model2_img, model3_img, model4_img, full_details, name, image, price, description, rating } = detailsBrand;
+    const { _id, brand, sub_model1, sub_model2, sub_model3, sub_model4, model1_img, model2_img, model3_img, model4_img,  name, image, price, description, rating } = detailsBrand;
     return (
         <div>
             <div className="carousel w-full">
