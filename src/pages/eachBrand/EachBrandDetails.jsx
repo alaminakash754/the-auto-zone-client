@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AwesomeButtonProgress } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
 import { useContext, useState } from 'react';
@@ -9,7 +9,7 @@ import axios from "axios";
 const EachBrandDetails = () => {
     const eachBrandDetails = useLoaderData();
     const { _id, name, image, full_details } = eachBrandDetails;
-
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const {user} = useContext(AutoZoneContext);
     const addToCart = () => {
@@ -30,6 +30,7 @@ const EachBrandDetails = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
+                  navigate('/mycart')
             })
         }
         
