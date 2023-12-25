@@ -20,7 +20,7 @@ const EachBrandDetails = () => {
                 full_details,
                 email: user?.email
             }
-            axios.post('http://localhost:5000/cart', cartBrand)
+            axios.post('https://the-auto-zone-server.vercel.app/cart', cartBrand)
             .then(res => {
                 console.log(res.data)
                 Swal.fire({

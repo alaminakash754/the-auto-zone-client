@@ -6,7 +6,7 @@ const MyCart = () => {
     const { user } = useContext(AutoZoneContext);
     const [carts, setCarts] = useState([]);
 
-    const url = `http://localhost:5000/cart?email=${user?.email}`
+    const url = `https://the-auto-zone-server.vercel.app/cart?email=${user?.email}`
 
     useEffect(() => {
         fetch(url)

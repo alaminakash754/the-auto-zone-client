@@ -20,7 +20,7 @@ const UpdateBrand = () => {
         const updatedItem = {select,brand,name,image,price,rating};
         console.log(updatedItem);
 
-        fetch(` http://localhost:5000/motos/${_id}`, {
+        fetch(` https://the-auto-zone-server.vercel.app/motos/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
