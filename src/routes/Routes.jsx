@@ -20,22 +20,22 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: () => fetch(' https://the-auto-zone-server-8yda40n8o-alamin-akashs-projects.vercel.app/motos')
+            loader: () => fetch(' http://localhost:5000/motos')
         },
         {
           path: '/details/:id',
           element: <BrandDetails></BrandDetails>,
-          loader: ({params}) => fetch(` https://the-auto-zone-server-8yda40n8o-alamin-akashs-projects.vercel.app/motos/${params.id}`)
+          loader: ({params}) => fetch(` http://localhost:5000/motos/${params.id}`)
         },
         {
           path: '/eachbrand/:id',
           element:<PrivateRoute><EachBrandDetails></EachBrandDetails></PrivateRoute>,
-          loader: ({params}) => fetch(` https://the-auto-zone-server-8yda40n8o-alamin-akashs-projects.vercel.app/motos/${params.id}`)
+          loader: ({params}) => fetch(` http://localhost:5000/motos/${params.id}`)
         },
         {
           path: '/updatebrand/:id',
           element:<PrivateRoute><UpdateBrand></UpdateBrand></PrivateRoute>,
-          loader: ({params}) => fetch(` https://the-auto-zone-server-8yda40n8o-alamin-akashs-projects.vercel.app/motos/${params.id}`)
+          loader: ({params}) => fetch(` http://localhost:5000/motos/${params.id}`)
         },
         {
           path:'/login',

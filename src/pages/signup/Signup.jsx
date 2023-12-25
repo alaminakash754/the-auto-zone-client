@@ -9,7 +9,7 @@ const Signup = () => {
     const [successSignUp, setSuccessSignUp] = useState('')
 
     const navigate = useNavigate();
-    const { createUser } = useContext(AutoZoneContext);
+    const { createUser, logOut } = useContext(AutoZoneContext);
 
     const handleSignUp = e => {
 
@@ -56,7 +56,7 @@ const Signup = () => {
             .then(result => {
                 console.log(result.user);
                 const user = {email};
-                fetch(' https://the-auto-zone-server-8yda40n8o-alamin-akashs-projects.vercel.app/user',{
+                fetch(' http://localhost:5000/user',{
                     method: 'POST',
                     headers:{
                         'content-type': 'application/json'
@@ -85,7 +85,7 @@ const Signup = () => {
                     .catch(error => {
                         console.error(error)
                     });
-                navigate('/login');
+                logOut();
             })
             .catch(error => {
                 console.error(error);

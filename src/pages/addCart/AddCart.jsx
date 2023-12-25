@@ -15,7 +15,7 @@ const AddCart = () => {
         const newItem = {select,brand,name,image,price,description,rating};
         console.log(newItem);
 
-        fetch(' https://the-auto-zone-server-8yda40n8o-alamin-akashs-projects.vercel.app/motos', {
+        fetch(' http://localhost:5000/motos', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
